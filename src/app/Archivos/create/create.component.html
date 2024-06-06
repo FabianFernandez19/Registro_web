@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="uploadForm" (ngSubmit)="uploadFile()" class="card p-4">
+          <div class="form-group">
+            <label for="file-upload" class="btn btn-primary">Elegir archivo</label>
+            <input type="file" id="file-upload" class="form-control-file d-none" (change)="onFileSelect($event)" accept=".pdf">
+            <span id="file-name" class="text-muted">No file selected</span>
+          </div>
+          <button type="submit" class="btn btn-success" [disabled]="!uploadForm.valid">subir archivo</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  

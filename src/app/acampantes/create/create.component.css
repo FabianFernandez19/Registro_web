@@ -1,0 +1,37 @@
+/* create.component.css */
+
+.container {
+    max-width: 600px; /* Ajusta esto según tus preferencias */
+    margin: auto;
+    padding: 20px; /* Agrega un poco de espacio alrededor del contenedor */
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px; /* Agrega espacio dentro de la tarjeta */
+    margin-top: 20px; /* Aumenta el margen superior de la tarjeta */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+.form-control {
+    border-radius: 15px;
+}
+
+.btn-primary {
+    background-color: #1DA1F2; /* Color de Twitter */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1991DA; /* Un poco más oscuro al pasar el ratón */
+}
+
+label {
+    font-weight: bold; /* Hace las etiquetas en negrita */
+    margin-bottom: 8px; /* Agrega espacio debajo de las etiquetas */
+}

@@ -1,0 +1,62 @@
+/* Asegura que el contenedor principal use todo el ancho disponible sin margen ni padding */
+.container {
+    width: 100%; /* Hace que el contenedor ocupe todo el ancho de la ventana */
+    max-width: 100%; /* Remueve cualquier restricción del ancho máximo */
+    margin: 0; /* Elimina margen exterior */
+    padding: 0; /* Elimina el padding interior */
+}
+
+/* Hace que .table-responsive sea realmente responsive y se extienda completamente */
+.table-responsive {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 0; /* No hay margen exterior */
+    padding: 0; /* No hay padding interior */
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+}
+
+/* Configura la tabla para llenar completamente su contenedor */
+.table {
+    width: 100%; /* Ocupa todo el ancho de .table-responsive */
+    margin: 0; /* No hay margen exterior */
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+    background-color: #fff; /* Fondo blanco para mejor legibilidad */
+}
+
+/* Estilos para los encabezados y celdas de la tabla */
+.table th, .table td {
+    padding: 8px; /* Padding para confort visual */
+    vertical-align: middle; /* Alinea el contenido verticalmente */
+    border: 1px solid #dee2e6; /* Bordes sutiles */
+}
+
+/* Personalización del encabezado de la tabla */
+.thead-dark {
+    background-color: #17a2b8; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco para contraste */
+}
+
+/* Estilos para los botones de acción dentro de la tabla */
+.btn-info, .btn-danger {
+    color: #fff; /* Texto blanco */
+    background-color: #17a2b8; /* Azul para 'Editar' */
+    border-color: #17a2b8; /* Borde coincidente */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Rojo para 'Eliminar' */
+    border-color: #dc3545; /* Borde coincidente */
+}
+
+.styled-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .styled-button:hover {
+    background-color: darkgreen;
+  }

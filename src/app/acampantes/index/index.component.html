@@ -1,0 +1,91 @@
+<!-- index.component.html -->
+<div class="container mt-4">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <h1 class="mb-4 text-center">Acampantes del Club</h1>
+    <div *ngIf="acampantes.length; else noAcampantes">
+      <table class="table table-striped shadow">
+      
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre Completo</th>
+            <th scope="col">Tipo de Entrada</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Email</th>
+            <th scope="col">Tipo de Sangre</th>
+            <th scope="col">Tipo de Documento</th>
+            <th scope="col">Número de Documento</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Fecha de Ingreso</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Edad</th>
+            <th scope="col">EPS Afiliada</th>
+            <th scope="col">Alérgico</th>
+            <th scope="col">Medicamento Alergias</th>
+            <th scope="col">Enfermedades Crónicas</th>
+            <th scope="col">Medicamento Enfermedades</th>
+            <th scope="col">En caso de accidente avisar a</th>
+            <th scope="col">Relación de contacto</th>
+            <th scope="col">Teléfono de contacto</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let acampante of acampantes; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ acampante.nombre_completo }}</td>
+            <td>{{ acampante.tipo_entrada }}</td>
+            <td>{{ acampante.cargo }}</td>
+            <td>{{ acampante.email }}</td>
+            <td>{{ acampante.tipo_sangre }}</td>
+            <td>{{ acampante.tipo_documento_identificacion }}</td>
+            <td>{{ acampante.numero_identificacion }}</td>
+            <td>{{ acampante.fecha_nacimiento | date:'mediumDate' }}</td>
+            <td>{{ acampante.fecha_ingreso_club | date:'mediumDate' }}</td>
+            <td>{{ acampante.telefono }}</td>
+            <td>{{ acampante.direccion }}</td>
+            <td>{{ acampante.Edad }}</td>
+            <td>{{ acampante.eps_afiliada }}</td>
+            <td>{{ acampante.alergico }}</td>
+            <td>{{ acampante.medicamento_alergias }}</td>
+            <td>{{ acampante.enfermedades_cronicas }}</td>
+            <td>{{ acampante.medicamento_enfermedades_cronicas }}</td>
+            <td>{{ acampante.en_caso_de_accidente_avisar_a }}</td>
+            <td>{{ acampante.relacion_persona_de_contacto }}</td>
+            <td>{{ acampante.telefono_persona_contacto }}</td>
+            <td> 
+                <button class="btn btn-primary" (click)="editAcampante(acampante)">Editar</button>
+                <button class="btn btn-danger" (click)="deleteAcampante(acampante.id!)">Eliminar</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="d-flex mt-3" style="gap: 10px;">
+      <!-- Mostrar el botón de descargar Excel solo si el usuario es administrador -->
+  <button *ngIf="isAdmin()" (click)="downloadExcel()" class="styled-button">Descargar Excel</button>
+  
+  <!-- Botón para descargar PDF siempre visible -->
+  <button class="btn btn-danger" (click)="downloadPDF()">Descargar PDF</button>
+      
+  </div>
+    <ng-template #noAcampantes>
+      <div class="alert alert-warning">
+        No hay acampantes registrados para este club.
+      </div>
+    </ng-template>
+    <button type="button" class="btn btn-primary" (click)="createAcampante()">
+      Agregar Nuevo Acampante
+  </button>
+
+  
+
+  
+
+
+  
+</div>
+
+  

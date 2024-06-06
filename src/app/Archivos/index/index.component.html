@@ -1,0 +1,31 @@
+<div class="container my-2"> <!-- Ajusta la clase my-5 a my-2 para reducir el margen vertical -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <h1 class="text-center mb-2">Lista de Archivos</h1> <!-- Reducir mb-4 a mb-2 -->
+  <div class="text-right mb-1"> <!-- Reducir mb-3 a mb-1 -->
+    <button (click)="agregarArchivos()" class="btn btn-primary">Agregar Nuevo Archivo</button>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre del Archivo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let archivo of listaArchivos">
+          <td>{{ archivo.id }}</td>
+          <td>{{ archivo.name }}</td>
+          <td>
+            <button (click)="downloadFile(archivo.id)" class="btn btn-info">Descargar</button>
+            <button (click)="eliminararchivos(archivo.id)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="listaArchivos.length === 0" class="alert alert-info">
+    No hay archivos disponibles para mostrar.
+  </div>
+</div>

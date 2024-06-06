@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-white">
+            <img src="https://ih1.redbubble.net/image.2353433332.9883/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Iglesia Adventista del Séptimo Día" class="adventist-icon">
+            <h3 class="card-title text-center">Iniciar sesión</h3>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="login()" class="pt-3">
+              <div class="form-group">
+                <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Correo electrónico">
+              </div>
+              <div class="form-group">
+                <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+            </form>
+            <p class="mt-4 text-center">
+              No tienes cuenta? <a routerLink="/registro" class="text-primary">Regístrate</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

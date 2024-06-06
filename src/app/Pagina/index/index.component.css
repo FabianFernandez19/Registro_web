@@ -1,0 +1,49 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+}
+
+.header, .navbar {
+  padding: 1rem 0;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main {
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .main {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 40px; /* smaller logo for smaller screens */
+  }
+}

@@ -1,0 +1,43 @@
+<div class="container my-5">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <table class="table table-hover">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre del Club</th>
+          <th scope="col">Distrito</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let club of listaClubes">
+          <td>{{ club.id }}</td>
+          <td>{{ club.nombre }}</td>
+          <td>{{ club.distrito?.nombre }}</td>
+          <td>
+            <button type="button" class="btn btn-info" (click)="editarClubes(club.id)">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="eliminarClubes(club.id)">Eliminar</button>
+            <button *ngIf="club.id" type="button" class="btn btn-secondary" (click)="verAcampantes(club.id)">Ver Acampantes</button>
+            <a [routerLink]="['/clubes', club.id, 'totales']" class="btn btn-primary">Ver Totales</a>
+            
+          </td>
+         
+       
+          
+        </tr>
+      </tbody>
+    </table>
+    
+
+
+
+    <button type="button" class="btn btn-outline-primary" (click)="agregarClubes()">Crear Club</button>
+    
+</div>
+
+<div *ngIf="isAdmin()"  class="total-acampantes"> 
+  Total de acampantes: <span class="total">{{ totalAcampantes.total_acampantes }}</span>
+</div>
+
+
+

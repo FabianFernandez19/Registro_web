@@ -1,0 +1,39 @@
+body {
+  background-color: #f5f8fa; /* Fondo similar al de Twitter */
+  color: #14171a; /* Color de texto oscuro para mejor contraste */
+  font-family: 'Arial', sans-serif; /* Fuente similar a la usada en Twitter */
+}
+
+.container {
+  background: #fff; /* Fondo blanco para la sección central */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Sombra sutil */
+  padding: 20px; /* Espaciado interno */
+  margin-top: 20px; /* Ajusta esto para reducir el espacio superior */
+}
+
+h1.text-center {
+  margin-bottom: 20px; /* Reduce el margen debajo del título si es necesario */
+}
+
+.div.text-right {
+  margin-bottom: 10px; /* Reduce el margen debajo del botón si es necesario */
+}
+
+.table {
+  margin-bottom: 0; /* Reduce el margen inferior de la tabla */
+}
+
+.btn-info {
+  background-color: #1da1f2; /* Botón azul estilo Twitter */
+  border-color: #1da1f2;
+}
+
+.btn-info:hover {
+  background-color: #1991eb; /* Azul un poco más oscuro al pasar el mouse */
+}
+
+thead.thead-dark th {
+  background-color: #14171a; /* Encabezado oscuro para contrastar con el texto claro */
+  color: #fff;
+}

@@ -1,0 +1,130 @@
+<!-- create.component.html -->
+<div class="container mt-4">
+  <!-- Añadir en el <head> de tu archivo index.html -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <h2 class="text-center mb-4">Agregar Nuevo Acampante</h2>
+    <form [formGroup]="acampanteForm" (ngSubmit)="save()" class="card p4 shadow">
+
+    <div class="form-group">
+      <label for="nombreCompleto">Nombre Completo:</label>
+      <input type="text" class="form-control" id="nombreCompleto" formControlName="nombre_completo" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoEntrada">Tipo de Entrada:</label>
+      <select id="tipoEntrada" class="form-control" formControlName="tipo_entrada" required>
+        <option [ngValue]="null" disabled>Selecciona un tipo de entrada</option>
+        <option value="Familia Pastoral-Ministerial">Familia Pastoral-Ministerial</option>
+        <option value="Directivo">Directivo</option>
+        <option value="Acampante">Acampante</option>
+        <option value="Acompañanate">Acompañanate</option>
+        <option value="Economo">Economo</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="cargo">Cargo:</label>
+      <select id="cargo" class="form-control" formControlName="cargo" required>
+        <option [ngValue]="null" disabled>Selecciona el cargo</option>
+        <option *ngFor="let cargo of cargos" [value]="cargo">{{ cargo }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" formControlName="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoSangre">Tipo de Sangre:</label>
+      <input type="text" class="form-control" id="tipoSangre" formControlName="tipo_sangre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoDocumento">Tipo de Documento de Identificación:</label>
+      <select id="tipoDocumento" class="form-control" formControlName="tipo_documento_identificacion" required>
+        <option [ngValue]="null" disabled>Selecciona un tipo de documento</option>
+        <option value="TI">Tarjeta de Identidad</option>
+        <option value="CC">Cédula de Ciudadanía</option>
+        <option value="Registro Civil">Registro Civil</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="numeroDocumento">Número de Documento:</label>
+      <input type="number" class="form-control" id="numeroDocumento" formControlName="numero_identificacion" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <input type="date" class="form-control" id="fechaNacimiento" formControlName="fecha_nacimiento" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaIngresoClub">Fecha de Ingreso al Club:</label>
+      <input type="date" class="form-control" id="fechaIngresoClub" formControlName="fecha_ingreso_club" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" class="form-control" id="telefono" formControlName="telefono" required>
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" class="form-control" id="direccion" formControlName="direccion" required>
+    </div>
+
+    <div class="form-group">
+      <label for="edad">Edad:</label>
+      <input type="number" class="form-control" id="edad" formControlName="Edad" required>
+    </div>
+
+    <div class="form-group">
+      <label for="epsAfiliada">EPS Afiliada:</label>
+      <input type="text" class="form-control" id="epsAfiliada" formControlName="eps_afiliada" required>
+    </div>
+
+    <div class="form-group">
+      <label for="alergico">Alérgico:</label>
+      <input type="text" class="form-control" id="alergico" formControlName="alergico" >
+    </div>
+
+    <div class="form-group">
+      <label for="medicamentoAlergias">Medicamento para Alergias:</label>
+      <input type="text" class="form-control" id="medicamentoAlergias" formControlName="medicamento_alergias">
+    </div>
+
+    <div class="form-group">
+      <label for="enfermedadesCronicas">Enfermedades Crónicas:</label>
+      <input type="text" class="form-control" id="enfermedadesCronicas" formControlName="enfermedades_cronicas">
+    </div>
+
+    <div class="form-group">
+      <label for="medicamentoEnfermedades">Medicamento para Enfermedades Crónicas:</label>
+      <input type="text" class="form-control" id="medicamentoEnfermedades" formControlName="medicamento_enfermedades_cronicas">
+    </div>
+
+    <div class="form-group">
+      <label for="accidenteAvisarA">En caso de accidente avisar a:</label>
+      <input type="text" class="form-control" id="accidenteAvisarA" formControlName="en_caso_de_accidente_avisar_a" required>
+    </div>
+
+    <div class="form-group">
+      <label for="relacionContacto">Relación de la Persona de Contacto:</label>
+      <input type="text" class="form-control" id="relacionContacto" formControlName="relacion_persona_de_contacto" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefonoContacto">Teléfono de la Persona de Contacto:</label>
+      <input type="tel" class="form-control" id="telefonoContacto" formControlName="telefono_persona_contacto" required>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary mt-3">
+      {{ acampanteId ? 'Actualizar Acampante' : 'Crear Acampante' }}
+    </button>
+    
+  </form>
+</div>
